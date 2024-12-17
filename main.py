@@ -1,8 +1,10 @@
-import tkinter as tk
 import threading
-import pomodoro
+from pomodoro import Pomodoro
+from gui import Gui
 
-pomo = pomodoro.Pomodoro(1500, 300, False, True, 0)
+#this file handles multithreading and main execution of the classes
+
+pomo = Pomodoro(1500, 300, False, True, 0)
 
 clock_thread = threading.Thread(target=pomo.clock)#this is a CHILD/WORKER THREAD, which can execute its target function 
                                                   #simultaneously while we do our other processes
